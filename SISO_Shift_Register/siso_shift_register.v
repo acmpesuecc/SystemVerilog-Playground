@@ -1,15 +1,25 @@
-module siso_shift_register (
-    input clk,
-    input si,
-    output so
+module sisomod(
+    clk,
+    clear,
+    si,
+    so
 );
 
-    reg [7:0] shift_register;
+input clk, si, clear;
+output so;
 
-    always @(posedge clk) begin
-        shift_register <= {si, shift_register[6:0]};
+reg so;
+reg [3:0] tmp;
+
+always @(posedge clk) begin
+    if (clear) begin
+        tmp <= 4'b0000;
+    end else begin
+        tmp <= tmp << 1;
+        tmp[0] <= si;
     end
 
-    assign so = shift_register[7];
+    so = tmp[3];
+end
 
 endmodule
