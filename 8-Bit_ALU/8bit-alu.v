@@ -1,24 +1,19 @@
-// Define xor2 module
 module xor2 (input wire a, b, output wire y);
     assign y = a ^ b;
 endmodule
 
-// Define xor3 module
 module xor3 (input wire a, b, c, output wire y);
     assign y = a ^ b ^ c;
 endmodule
 
-// Define and2 module
 module and2 (input wire a, b, output wire y);
     assign y = a & b;
 endmodule
 
-// Define or3 module
 module or3 (input wire a, b, c, output wire y);
     assign y = a | b | c;
 endmodule
 
-// Define mux2 module
 module mux2 (input wire d0, d1, s, output wire y);
     assign y = s ? d1 : d0;
 endmodule
