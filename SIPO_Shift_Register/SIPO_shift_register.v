@@ -3,7 +3,7 @@ module sipo(
     input clear,
     input d,
     output reg [3:0] q
-);
+ );
 
     reg [3:0] temp;
 
